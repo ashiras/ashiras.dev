@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/*fonts config*/
+@font-face {
+  font-family: 'mont_thin';
+  src:url('../fonts/Montserrat-Thin.woff2') format('woff2'),
+    url('../fonts/Montserrat-Thin.woff') format('woff'),
+    url('../fonts/Montserrat-Thin.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'mont_light';
+  src: url('../fonts/Montserrat-Light.woff2') format('woff2'),
+    url('../fonts/Montserrat-Light.woff') format('woff'),
+    url('../fonts/Montserrat-Light.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'mont_regular';
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('../fonts/Montserrat-Regular.woff') format('woff'),
+    url('../fonts/Montserrat-Regular.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'mont_bold';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+    url('../fonts/Montserrat-Bold.woff') format('woff'),
+    url('../fonts/Montserrat-Bold.ttf') format('ttf');
+}
+
+/*color config*/
+$blue: #2A95E4;
+$gray: #eee;
+$white: #fff;
+
+/**/
+body,body *{
+  font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+  font-size: 13px;
+  line-height: 150%;
+  text-align: center;
+  a{
+    text-decoration: none;
+    transition: all ease 0.3s;
+    &:hover,
+    &:after{
+      text-decoration: none;
+      transition: all ease 0.3s;
+    }
+  }
+  h2{
+    font-family: 'mont_regular';
+    font-size: 50px;
+    margin: 50px 0;
+    letter-spacing: .2em;
+    &:after{
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      margin: 10px auto;
+      background: #000;
+    }
+  }
+  h3{
+    margin: 40px 0 25px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  article{
+    padding: 100px 0 150px;
+  }
+  p{
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+#home{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: url(../images/main.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  section{
+    width: 110px;
+    height: 170px;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: auto;
+    text-align: center;
+    img{
+      width: 100px;
+      height: auto;
+    }
+    a{
+      display: block;
+      margin-top: 50px;
+      color: $white;
+      font-family: 'mont_regular';
+      font-size:20px;
+    }
+    a:after{
+      content: "";
+      display: block;
+      width: 0px;
+      height: 1px;
+      margin: 10px auto 0;
+      background: $white;
+    }
+    a:hover:after{
+      width: 110px;
+    }
+  }
+}
+#business{
+  background: $gray;
+}
