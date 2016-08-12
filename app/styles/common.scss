@@ -35,43 +35,86 @@ $white: #fff;
 body,body *{
   font-family: "游ゴシック体", "Yu Gothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
   font-size: 13px;
-  line-height: 150%;
+  line-height: 200%;
   text-align: center;
-  a{
+}
+a{
+  text-decoration: none;
+  transition: all ease 0.3s;
+  &:hover,
+  &:after{
     text-decoration: none;
     transition: all ease 0.3s;
-    &:hover,
-    &:after{
-      text-decoration: none;
-      transition: all ease 0.3s;
-    }
   }
-  h2{
-    font-family: 'mont_regular';
-    font-size: 50px;
-    margin: 50px 0;
-    letter-spacing: .2em;
-    &:after{
-      content: "";
+}
+article{
+  padding: 100px 0 150px;
+}
+p{
+  width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+h2{
+  font-family: 'mont_regular';
+  font-size: 50px;
+  margin: 50px 0;
+  letter-spacing: .2em;
+  &:after{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    margin: 10px auto;
+    background: #000;
+  }
+}
+h3{
+  margin: 40px 0 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav{
+  position: fixed;
+  right: 20px;
+  top: 0;
+  text-align: right;
+  li.menu{
+    a{
       display: block;
-      width: 50px;
-      height: 3px;
-      margin: 10px auto;
-      background: #000;
+      margin-bottom: 5px;
+      font-family: 'mont_regular';
+      font-size: 18px;
+      color: $blue;
+      &:after{
+        content: "";
+        display: block;
+        width:0px;
+        height: 2px;
+        margin: -3px auto 0;
+        background: $blue;
+      }
+      &:hover:after{
+        width: 50px;
+      }
     }
   }
-  h3{
-    margin: 40px 0 25px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  article{
-    padding: 100px 0 150px;
-  }
-  p{
-    width: 500px;
-    margin: 0 auto;
-    text-align: left;
+  li.logo{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 20px auto;
+    border-bottom-left-radius: 50%;
+    background: $blue;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+    img{
+      width: 40px;
+      height: auto;
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      margin: auto;
+    }
   }
 }
 
@@ -105,15 +148,43 @@ body,body *{
       content: "";
       display: block;
       width: 0px;
-      height: 1px;
-      margin: 10px auto 0;
+      height: 2px;
+      margin: 0 auto 0;
       background: $white;
     }
     a:hover:after{
-      width: 110px;
+      width: 80px;
     }
   }
 }
 #business{
   background: $gray;
+}
+
+@media screen and (max-width:500px){
+  h2{
+    font-size: 35px;
+  }
+  h3{
+    width: 85%;
+    margin: 40px auto 25px;
+  }
+  p{
+    width: 85%;
+  }
+  nav{
+    right: 0;
+    li.menu{
+      display: none;
+    }
+    li.logo{
+      position: relative;
+      width: 70px;
+      height: 70px;
+      img{
+        width: 35px;
+      }
+    }
+
+  }
 }
