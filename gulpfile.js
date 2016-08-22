@@ -1,4 +1,4 @@
-// generated on 2016-08-11 using generator-webapp 2.1.0
+// generated on 2016-08-22 using generator-webapp 2.1.0
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -66,6 +66,15 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('html:about', ['styles', 'scripts'], () => {
+  return gulp.src('app/about/*.html')
+    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('dist/about'));
+});
+
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
     .pipe($.cache($.imagemin({
@@ -88,10 +97,18 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
-    '!app/*.html'
+    '!app/*.html',
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('extras:assets', () => {
+  return gulp.src([
+    'app/assets/**/*.*'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
@@ -164,7 +181,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'styles', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'html:about', 'images', 'fonts', 'extras', 'extras:assets'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
