@@ -283,21 +283,6 @@ footer {
   }
 }
 
-.subtitle {
-  color: $corprate-color;
-  letter-spacing: .5em;
-  margin: 20px auto;
-
-  ::after {
-    background: $corprate-font-color;
-    content: '';
-    display: block;
-    height: 1px;
-    margin: 20px auto 50px;
-    width: 50px;
-  }
-}
-
 @media screen and (max-width: 500px) {
   h2 {
     font-size: 35px;
