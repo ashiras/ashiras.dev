@@ -1,7 +1,8 @@
 @charset 'UTF-8';
 
-$corprate-color: #2a95e4;
-$corprate-font-color: #fff;
+$corporate-color: #2a95e4;
+$corporate-font-color: #fff;
+$corporate-background-color: #61a1cf;
 $even-color: #eee;
 $shadow-color: rgba(0, 0, 0, .2);
 
@@ -156,7 +157,7 @@ nav {
   }
 
   a {
-    color: $corprate-color;
+    color: $corporate-color;
     font-family: 'mont_light';
     font-size: 20px;
     opacity: 1;
@@ -167,7 +168,7 @@ nav {
   }
 
   .logo {
-    background: $corprate-color;
+    background: $corporate-color;
     border-bottom-left-radius: 50%;
     box-shadow: 2px 5px 5px $shadow-color;
     display: block;
@@ -189,6 +190,7 @@ nav {
 }
 
 .home {
+  background-color: $corporate-background-color;
   background-image: url('../images/main.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -217,8 +219,8 @@ nav {
   }
 
   a {
-    border-bottom: 1px solid $corprate-font-color;
-    color: $corprate-font-color;
+    border-bottom: 1px solid $corporate-font-color;
+    color: $corporate-font-color;
     display: block;
     font-family: 'mont_regular';
     font-size: 1.2rem;
@@ -279,7 +281,7 @@ footer {
   width: 100%;
 
   strong {
-    color: $corprate-font-color;
+    color: $corporate-font-color;
   }
 }
 
