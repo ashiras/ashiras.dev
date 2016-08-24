@@ -1,13 +1,42 @@
-// bower:scss
-// endbower
-
 @charset 'UTF-8';
-$path-assets: '';
-$path-fonts: '';
-$path-images: '';
 
-// reset
+$corprate-color: #2a95e4;
+$corprate-font-color: #fff;
+$even-color: #eee;
+$shadow-color: rgba(0, 0, 0, .2);
+
+// fonts setting
+@font-face {
+  font-family: 'mont_thin';
+  src: url('../fonts/Montserrat-Thin.woff2') format('woff2'),
+  url('../fonts/Montserrat-Thin.woff') format('woff'),
+  url('../fonts/Montserrat-Thin.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'mont_light';
+  src: url('../fonts/Montserrat-Light.woff2') format('woff2'),
+  url('../fonts/Montserrat-Light.woff') format('woff'),
+  url('../fonts/Montserrat-Light.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'mont_regular';
+  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+  url('../fonts/Montserrat-Regular.woff') format('woff'),
+  url('../fonts/Montserrat-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'mont_bold';
+  src: url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+  url('../fonts/Montserrat-Bold.woff') format('woff'),
+  url('../fonts/Montserrat-Bold.ttf') format('ttf');
+}
+
+// Boxsizing
 * {
+  -o-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -15,27 +44,11 @@ html,
 body,
 div,
 span,
-object,
-iframe,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 p,
-blockquote,
-pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
 img,
 ins,
 kbd,
@@ -52,6 +65,7 @@ var,
 b,
 u,
 i,
+center,
 dl,
 dt,
 dd,
@@ -101,18 +115,27 @@ video {
   vertical-align: baseline;
 }
 
-html {
-  overflow-y: scroll;
+// content setting
+body {
+  * {
+    font-size: 13px;
+    line-height: 150%;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
+a {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: opacity ease .3s;
+  vertical-align: baseline;
+
+  :hover {
+    text-decoration: none;
+    transition: opacity ease .3s;
+  }
 }
 
 ol,
@@ -120,277 +143,145 @@ ul {
   list-style: none;
 }
 
-fieldset,
-button {
-  border: 0;
-}
+nav {
+  position: fixed;
+  right: 0;
+  text-align: right;
+  top: 0;
 
-img {
-  font-size: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-  vertical-align: top;
-}
+  li {
+    margin-bottom: 20px;
+    margin-right: 5px;
+    position: relative;
+  }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+  a {
+    color: $corprate-color;
+    font-family: 'mont_light';
+    font-size: 20px;
+    opacity: 1;
 
-caption,
-th {
-  text-align: left;
-}
+    &:hover {
+      opacity: .5;
+    }
+  }
 
-input,
-select {
-  vertical-align: middle;
-}
-
-address,
-caption,
-cite,
-code,
-dfn,
-em,
-strong,
-th,
-var {
-  font-style: normal;
-  font-weight: normal;
-}
-
-// fonts setting
-@font-face {
-  font-family: 'mont_regular';
-  src: url('../fonts/Montserrat-Regular.woff2') format('woff2'),
-  url('../fonts/Montserrat-Regular.woff') format('woff'),
-  url('../fonts/Montserrat-Regular.ttf') format('ttf');
-}
-
-// color setting
-$main: #2a95e4;
-$bggray: #eee;
-$white: #fff;
-$black: #000;
-$shadow: rgba(0, 0, 0, .2);
-
-// content
-body {
-  font-family: '游ゴシック体', 'Yu Gothic', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
-  font-size: 13px;
-  line-height: 150%;
-
-  & * {
-    font-family: '游ゴシック体', 'Yu Gothic', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
-    font-size: 13px;
-    line-height: 150%;
+  .logo {
+    background: $corprate-color;
+    border-bottom-left-radius: 50%;
+    box-shadow: 2px 5px 5px $shadow-color;
+    display: block;
+    height: 100px;
+    margin: 0 -3px 30px 15px;
+    width: 100px;
   }
 }
 
-a {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  transition: ease .3s;
-  vertical-align: baseline;
+.gohome {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: -3px;
+  top: 0;
+  width: 40px;
+}
 
-  &:hover {
-    transition: ease .3s;
+.home {
+  background-image: url('../images/main.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+
+  section {
+    bottom: 0;
+    height: 186px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 146px;
+  }
+
+  h1 {
+    img {
+      height: auto;
+      width: 100px;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid $corprate-font-color;
+    color: $corprate-font-color;
+    display: block;
+    font-family: 'mont_regular';
+    font-size: 1.2rem;
+    height: 36px;
+    margin-top: 55px;
+    opacity: 1;
+
+    &:hover {
+      opacity: .5;
+    }
   }
 }
 
-article {
-  padding: 100px 0 150px;
-  text-align: center;
+.even {
+  background-color: $even-color;
+}
+
+h1 {
+  font-family: 'mont_thin';
+  font-size: 5rem;
+  margin-bottom: 50px;
 }
 
 h2 {
-  font-family: 'mont_regular';
-  font-size: 2.5rem;
-  letter-spacing: .1em;
-
-  &:after {
-    background: $black;
-    content: '';
-    display: block;
-    height: 3px;
-    margin: 20px auto 60px;
-    width: 50px;
-  }
+  font-family: 'mont_thin';
+  font-size: 5rem;
+  margin-bottom: 100px;
 }
 
 h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.7rem;
+  margin: 70px 0 50px;
 }
 
 p {
-  line-height: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
   margin: 0 auto;
   text-align: left;
   width: 500px;
 }
 
-// navigation
-nav {
-  position: fixed;
-  right: 25px;
-  top: 0;
-
-  .logo {
-    margin-bottom: 20px;
-
-    a {
-      background: $main;
-      border-bottom-left-radius: 50%;
-      box-shadow: 2px 5px 5px $shadow;
-      display: block;
-      height: 80px;
-      margin: 0 0 0 auto;
-      position: relative;
-      width: 80px;
-    }
-
-    img {
-      bottom: 0;
-      height: auto;
-      left: 0;
-      margin: auto;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 40px;
-    }
-  }
-
-  .menu {
-    margin-top: 8px;
-    text-align: right;
-
-    a {
-      color: $main;
-      font-family: 'mont_regular';
-      font-size: 1.1rem;
-
-      &:after {
-        background: $main;
-        content: '';
-        display: block;
-        height: 2px;
-        margin: 0 auto;
-        transition: ease .3s;
-        width: 0;
-      }
-
-      &:hover:after {
-        transition: ease .3s;
-        width: 50px;
-      }
-
-    }
-  }
+section {
+  font-size: 0;
+  margin: 50px auto;
 }
 
-// home
-.home {
-  background: {
-    image: url('../images/main.jpg');
-    position: center;
-    repeat: no-repeat;
-    size: cover;
-  }
-  height: 100vh;
-  position: relative;
+article {
+  padding: 150px 0;
   text-align: center;
-  width: 100vw;
-
-
-  section {
-    bottom: 0;
-    height: 150px;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 120px;
-
-    h1 {
-      height: auto;
-      margin: 0 auto;
-      width: 100px;
-    }
-
-    img {
-      height: auto;
-      width: 100%;
-    }
-
-
-    a {
-      color: $white;
-      display: block;
-      font-family: 'mont_regular';
-      font-size: 1.2rem;
-      letter-spacing: .1em;
-      margin-top: 30px;
-
-      &:after {
-        background: $white;
-        content: '';
-        display: block;
-        height: 2px;
-        margin: 0 auto;
-        transition: ease .3s;
-        width: 0;
-      }
-
-      &:hover:after {
-        transition: ease .3s;
-        width: 50px;
-      }
-    }
-  }
 }
 
-// business
-#business {
-  background-color: $bggray;
+.subtitle {
+  color: $corprate-color;
+  letter-spacing: .5em;
+  margin: 20px auto;
 
-  p:first-of-type {
-    margin-bottom: 50px;
-  }
-}
-
-//// mobile styles
-@media screen and (max-width: 500px) {
-  nav {
-    right: 0;
-
-    .logo {
-
-      a {
-        height: 70px;
-        width: 70px;
-      }
-
-      img {
-        width: 35px;
-      }
-    }
-
-    .menu {
-      display: none;
-    }
-  }
-
-  p,
-  h3 {
-    margin: 0 auto;
-    width: 85%;
+  ::after {
+    background: $corprate-font-color;
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 20px auto 50px;
+    width: 50px;
   }
 }
