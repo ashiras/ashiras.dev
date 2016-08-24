@@ -271,6 +271,18 @@ article {
   text-align: center;
 }
 
+footer {
+  bottom: 0;
+  padding: 50px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+
+  strong {
+    color: $corprate-font-color;
+  }
+}
+
 .subtitle {
   color: $corprate-color;
   letter-spacing: .5em;
@@ -283,5 +295,38 @@ article {
     height: 1px;
     margin: 20px auto 50px;
     width: 50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    margin: 40px auto 25px;
+    width: 85%;
+  }
+
+  p {
+    width: 85%;
+  }
+
+  nav {
+    right: 0;
+
+    .menu {
+      display: none;
+    }
+
+    .logo {
+      height: 70px;
+      position: relative;
+      width: 70px;
+
+      img {
+        width: 35px;
+      }
+    }
   }
 }
