@@ -124,6 +124,15 @@ p {
   width: 500px;
 }
 
+blockquote {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  margin: 0 auto;
+  text-align: left;
+  width: 500px;
+  color: #888;
+}
+
 section {
   font-size: 0;
   margin: 50px auto;
@@ -139,7 +148,7 @@ section {
     width: 85%;
   }
 
-  p {
+  p, span {
     width: 85%;
   }
 
