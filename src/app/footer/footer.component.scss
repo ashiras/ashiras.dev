@@ -1,0 +1,20 @@
+$corporate-color: #2a95e4;
+$corporate-font-color: #fff;
+$corporate-background-color: #61a1cf;
+$even-color: #eee;
+$shadow-color: rgba(0, 0, 0, .2);
+
+footer {
+  bottom: 0;
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.home > strong {
+  color: $corporate-font-color;
+}
+
+.home {
+  position: absolute;
+}

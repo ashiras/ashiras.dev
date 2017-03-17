@@ -1,0 +1,45 @@
+$corporate-color: #2a95e4;
+$corporate-font-color: #fff;
+$corporate-background-color: #61a1cf;
+$even-color: #eee;
+$shadow-color: rgba(0, 0, 0, .2);
+
+div {
+  background-color: $corporate-background-color;
+  background-image: url('../../assets/images/main.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+
+  section {
+    bottom: 0;
+    height: 186px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 146px;
+  }
+
+  h1 {
+    img {
+      height: auto;
+      width: 100px;
+    }
+  }
+
+  span {
+    color: $corporate-font-color;
+    display: block;
+    font-family: 'mont_regular';
+    font-size: 0.9rem;
+    height: 36px;
+    margin-top: 55px;
+    opacity: 1;
+  }
+}

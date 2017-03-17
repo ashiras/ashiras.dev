@@ -1,0 +1,17 @@
+$corporate-color: #2a95e4;
+$corporate-font-color: #fff;
+$corporate-background-color: #61a1cf;
+$even-color: #eee;
+$shadow-color: rgba(0, 0, 0, .2);
+
+nav {
+  position: fixed;
+  right: 10px;
+  text-align: right;
+  top: 10px;
+  z-index:1000
+}
+
+nav > button {
+  background-color: #2d6b9e;
+}
