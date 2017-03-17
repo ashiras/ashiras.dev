@@ -3,3 +3,13 @@ div {
   margin: 0 auto;
   width: 500px;
 }
+
+@media screen and (max-width: 500px) {
+  div {
+    width: 85%;
+  }
+
+  P {
+    width: 100%;
+  }
+}
