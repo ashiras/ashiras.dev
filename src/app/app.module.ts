@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { OverviewComponent } from './overview/overview.component';
     ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MaterialModule
   ],
   providers: [],
